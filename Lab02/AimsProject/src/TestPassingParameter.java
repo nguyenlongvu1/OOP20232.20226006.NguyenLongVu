@@ -12,9 +12,9 @@ public class TestPassingParameter {
     }
     public static void swap(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2)
     {
-        DigitalVideoDisc dvd=dvd1;
-        dvd1=dvd2;
-        dvd2=dvd;
+        DigitalVideoDisc dvd=dvd2;
+        dvd2=dvd1;
+        dvd1=dvd;
     }
     public static void changeTitle(DigitalVideoDisc dvd, String title)
     {
