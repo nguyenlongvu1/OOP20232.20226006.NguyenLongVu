@@ -16,7 +16,7 @@ public class Cart
         {
             itemsOrdered[qtyOrdered]=disc;
             qtyOrdered+=1;
-            System.out.println("The disc has been added"  );
+            System.out.println("The disc has been added");
         }
     }
     public void addDigitalVideoDisc(DigitalVideoDisc []disc)
@@ -81,7 +81,7 @@ public class Cart
         for(int i=0;i<itemsOrdered.length;i++)
         {
             if(itemsOrdered[i]==null) break;
-            totalCost+=itemsOrdered[i].getCost()*10000/10000;
+            totalCost+=itemsOrdered[i].getCost()*100000/100000;
         }
         return totalCost;
     }

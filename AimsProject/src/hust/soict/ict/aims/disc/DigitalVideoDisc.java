@@ -60,9 +60,6 @@ public class DigitalVideoDisc
     public void setTitle(String title) {
         this.title = title;
     }
-    public static int getNbDigitalVideoDisc() {
-        return nbDigitalVideoDisc;
-    }
     public String getId() {
         return id;
     }
