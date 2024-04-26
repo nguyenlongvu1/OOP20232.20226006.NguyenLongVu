@@ -60,17 +60,10 @@ public class DigitalVideoDisc extends Media
     public void setTitle(String title) {
         this.title = title;
     }
-<<<<<<< HEAD:AimsProject/src/hust/soict/ict/aims/disc/DigitalVideoDisc.java
-    public String getId() {
-=======
     public static int getNbDigitalVideoDisc() {
         return nbDigitalVideoDisc;
     }
     public int getId() {
-<<<<<<< HEAD
->>>>>>> topic/aims-project/addmedia-class:AimsProject/src/hust/soict/ict/aims/media/DigitalVideoDisc.java
-=======
->>>>>>> topic/aims-project/addmedia-class
         return id;
     }
     

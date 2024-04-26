@@ -81,15 +81,8 @@ public class Cart
         for(int i=0;i<itemsOrdered.length;i++)
         {
             if(itemsOrdered[i]==null) break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            totalCost+=itemsOrdered[i].getCost()*100000/100000;
-=======
             totalCost=(totalCost+itemsOrdered[i].getCost()*10000/10000)*10000/10000;
->>>>>>> topic/aims-project/addmedia-class
-=======
-            totalCost=(totalCost+itemsOrdered[i].getCost()*10000/10000)*10000/10000;
->>>>>>> topic/aims-project/addmedia-class
+
         }
         return totalCost;
     }
