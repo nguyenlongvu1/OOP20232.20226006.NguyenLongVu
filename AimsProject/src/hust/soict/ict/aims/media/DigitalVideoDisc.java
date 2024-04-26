@@ -1,5 +1,5 @@
-package hust.soict.ict.aims.disc;
-public class DigitalVideoDisc
+package hust.soict.ict.aims.media;
+public class DigitalVideoDisc extends Media
 {
     private String title;
     private String category;
@@ -7,9 +7,9 @@ public class DigitalVideoDisc
     private int lenght;
     private float cost;
     private static int nbDigitalVideoDisc=0;
-    private String id;
+    private int id;
 
-    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost, String id) {
+    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost, int id) {
         this.title = title;
         this.category = category;
         this.director = director;
@@ -63,7 +63,7 @@ public class DigitalVideoDisc
     public static int getNbDigitalVideoDisc() {
         return nbDigitalVideoDisc;
     }
-    public String getId() {
+    public int getId() {
         return id;
     }
     
