@@ -67,7 +67,10 @@ public class DigitalVideoDisc extends Media
         return nbDigitalVideoDisc;
     }
     public int getId() {
+<<<<<<< HEAD
 >>>>>>> topic/aims-project/addmedia-class:AimsProject/src/hust/soict/ict/aims/media/DigitalVideoDisc.java
+=======
+>>>>>>> topic/aims-project/addmedia-class
         return id;
     }
     
