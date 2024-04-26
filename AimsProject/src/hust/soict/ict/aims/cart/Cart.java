@@ -1,5 +1,5 @@
 package hust.soict.ict.aims.cart;
-import hust.soict.ict.aims.disc.DigitalVideoDisc;
+import hust.soict.ict.aims.media.DigitalVideoDisc;
 
 public class Cart
 {
@@ -81,8 +81,62 @@ public class Cart
         for(int i=0;i<itemsOrdered.length;i++)
         {
             if(itemsOrdered[i]==null) break;
+<<<<<<< HEAD
             totalCost+=itemsOrdered[i].getCost()*100000/100000;
+=======
+            totalCost=(totalCost+itemsOrdered[i].getCost()*10000/10000)*10000/10000;
+>>>>>>> topic/aims-project/addmedia-class
         }
         return totalCost;
+    }
+    public void printList()
+    {
+        System.out.println("*********************************************CART********************************************* ");
+        System.out.println("Ordered Items");
+        for(int i=1;i<=itemsOrdered.length;i++)
+        {
+            if(itemsOrdered[i-1]==null) break;
+            System.out.print(toString(itemsOrdered,i));
+            
+        }
+        System.out.printf("Total cost: %.2f\n",totalCost());
+        System.out.println("********************************************************************************************** ");
+    }
+    public String toString(DigitalVideoDisc itemsOrdered[],int i)
+    {
+        String text=String.format("%d. DVD - %s \t\t - %-20s- %s \t - %d \t - %.2f\n",i,itemsOrdered[i-1].getTitle(),itemsOrdered[i-1].getCategory(),itemsOrdered[i-1].getDirector(),itemsOrdered[i-1].getLenght(),itemsOrdered[i-1].getCost());
+        return text;
+    }
+    public boolean isMatch(String userInput, String DVDif)
+    {
+        return DVDif.toLowerCase().contains(userInput.toLowerCase());
+    }
+    public void searchDVDbyTitle(String userInput)
+    {
+        int count =0;
+        for(int i=1;i<=itemsOrdered.length;i++)
+        {
+            if(itemsOrdered[i-1]==null) break;
+            if(isMatch(userInput,itemsOrdered[i-1].getTitle()))
+            {
+                count++;
+                System.out.print(toString(itemsOrdered,count));
+            }
+            
+        }
+    }
+    public void searchDVDbyId(String userInput)
+    {
+        int count =0;
+        for(int i=1;i<=itemsOrdered.length;i++)
+        {
+            if(itemsOrdered[i-1]==null) break;
+            String s=String.valueOf(itemsOrdered[i-1].getId());
+            if(isMatch(userInput,s))
+            {
+                count++;
+                System.out.print(toString(itemsOrdered,count));
+            }         
+        }
     }
 }

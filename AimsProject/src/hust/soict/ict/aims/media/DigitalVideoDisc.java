@@ -1,5 +1,5 @@
-package hust.soict.ict.aims.disc;
-public class DigitalVideoDisc
+package hust.soict.ict.aims.media;
+public class DigitalVideoDisc extends Media
 {
     private String title;
     private String category;
@@ -7,9 +7,9 @@ public class DigitalVideoDisc
     private int lenght;
     private float cost;
     private static int nbDigitalVideoDisc=0;
-    private String id;
+    private int id;
 
-    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost, String id) {
+    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost, int id) {
         this.title = title;
         this.category = category;
         this.director = director;
@@ -60,7 +60,14 @@ public class DigitalVideoDisc
     public void setTitle(String title) {
         this.title = title;
     }
+<<<<<<< HEAD:AimsProject/src/hust/soict/ict/aims/disc/DigitalVideoDisc.java
     public String getId() {
+=======
+    public static int getNbDigitalVideoDisc() {
+        return nbDigitalVideoDisc;
+    }
+    public int getId() {
+>>>>>>> topic/aims-project/addmedia-class:AimsProject/src/hust/soict/ict/aims/media/DigitalVideoDisc.java
         return id;
     }
     

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ex2_6{
+public class Ex2_6{
     static void LinearEq()
     {
         double a, b;
