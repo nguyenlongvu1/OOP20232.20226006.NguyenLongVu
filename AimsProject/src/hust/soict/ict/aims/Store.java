@@ -1,48 +1,53 @@
 package hust.soict.ict.aims;
-import hust.soict.ict.aims.media.DigitalVideoDisc;
+import hust.soict.ict.aims.media.*;
+import java.util.ArrayList;
 public class Store {
-    private DigitalVideoDisc itemsInStore []= new DigitalVideoDisc[1000];
-    int qtyOrdered=0;
-    public void addDVD(DigitalVideoDisc disc)
+    ArrayList<Media> itemsInStore = new ArrayList<Media>();
+    public void addMedia(Media item)
     {
-        itemsInStore[qtyOrdered]=disc;
-        qtyOrdered+=1;
-        System.out.println("The disc has been added"  );
+        itemsInStore.add(item);
+        System.out.println("The items has been added"  );
     }
-    public void removeDVD(DigitalVideoDisc disc)
+    public void removeMedia(Media item)
     {
-        for(int i=0;i<itemsInStore.length;i++)
+        int exist=0;
+        int j=0;
+        for (Media i : itemsInStore) 
         {
-            if(itemsInStore[i]==null) 
+            if(item.equals(i)==true) 
             {
-                System.out.println("items does not exist");
+                exist=1;
                 break;
             }
-            if(itemsInStore[i]==disc) 
-            {
-                for(int j=i;j<itemsInStore.length;j++)
-                {
-                    if(itemsInStore[j]==null) break;
-                    itemsInStore[j]=itemsInStore[j+1];
-                }
-            }
+            j++;
+        }
+        if(exist==1)
+        {
+            itemsInStore.remove(j);
+        }
+        else
+        {
+            System.out.println("this item is not exist");
         }
     }
-    public String toString(DigitalVideoDisc itemsOrdered[],int i)
+    public String toString(Media itemsInStore,int i)
     {
-        String text=String.format("%d. DVD - %s \t\t - %-20s- %s \t - %d \t - %.2f\n",i,itemsOrdered[i-1].getTitle(),itemsOrdered[i-1].getCategory(),itemsOrdered[i-1].getDirector(),itemsOrdered[i-1].getLenght(),itemsOrdered[i-1].getCost());
+        String text=String.format("%d. DVD - %s \t\t - %-20s - %.2f\n",i,itemsInStore.getTitle(),itemsInStore.getCategory(),itemsInStore.getCost());
         return text;
     }
     public void printList()
     {
-        System.out.println("*********************************************CART********************************************* ");
+        int count =0;
+        System.out.println("*********************************************STORE********************************************* ");
         System.out.println("Ordered Items");
-        for(int i=1;i<=itemsInStore.length;i++)
+        for(Media i : itemsInStore)
         {
-            if(itemsInStore[i-1]==null) break;
-            System.out.print(toString(itemsInStore,i));
+            count++;
+            if(i==null) break;
+            System.out.print(toString(i,count));
             
         }
-        System.out.println("********************************************************************************************** ");
+
+        System.out.println("************************************************************************************************ ");
     }
 }
