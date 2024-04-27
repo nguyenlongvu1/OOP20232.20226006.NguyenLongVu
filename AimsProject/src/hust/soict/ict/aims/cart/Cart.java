@@ -38,8 +38,10 @@ public class Cart
         float totalCost=0f;
         for(Media i : itemsOrdered)
         {
+
             if(i==null) break;
             totalCost=(totalCost+i.getCost()*10000/10000)*10000/10000;
+            
         }
         return totalCost;
     }
