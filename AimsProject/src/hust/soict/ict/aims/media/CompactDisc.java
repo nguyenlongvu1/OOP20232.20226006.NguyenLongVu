@@ -62,4 +62,9 @@ public class CompactDisc extends Disc{
             System.out.println("this track is not exist");
         }
     }
+    public String toStrings()
+    {
+        String text=String.format("Book - %s \t\t - %-20s - %s \t -%d \t %.2f\n",this.getTitle(),this.getCategory(),this.artist,this.getId(),this.getCost());
+        return text;
+    }
 }
