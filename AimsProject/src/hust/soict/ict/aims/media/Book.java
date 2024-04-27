@@ -77,4 +77,9 @@ public class Book extends Media
             System.out.println("this author is not exist");
         }
     }
+    public String toStrings()
+    {
+        String text=String.format("Book - %s \t\t - %-20s - %s \t -%d \t %.2f\n",this.getTitle(),this.getCategory(),this.authors,this.getId(),this.getCost());
+        return text;
+    }
 }

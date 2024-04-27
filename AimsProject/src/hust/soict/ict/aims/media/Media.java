@@ -1,10 +1,10 @@
 package hust.soict.ict.aims.media;
 
-public class Media {
-    int id; 
-    String title;
-    String category;
-    float cost;
+public  class Media {
+    protected int id; 
+    protected String title;
+    protected String category;
+    protected float cost;
     public int getId() {
         return id;
     }
@@ -28,6 +28,10 @@ public class Media {
     }
     public void setCost(float cost) {
         this.cost = cost;
+    }
+    public String toStrings()
+    {
+        return "a";
     }
     public static void main (String[] args)
     {

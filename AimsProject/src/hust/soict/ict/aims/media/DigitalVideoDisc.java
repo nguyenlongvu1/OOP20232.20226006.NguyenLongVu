@@ -1,19 +1,16 @@
 package hust.soict.ict.aims.media;
-public class DigitalVideoDisc extends Media
+public class DigitalVideoDisc extends Disc
 {
     private String title;
     private String category;
-    private String director;
-    private int lenght;
     private float cost;
     private static int nbDigitalVideoDisc=0;
     private int id;
 
-    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost, int id) {
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost, int id) {
+        super(length,director);
         this.title = title;
         this.category = category;
-        this.director = director;
-        this.lenght = lenght;
         this.cost = cost;
         this.id = id;
     }
@@ -28,17 +25,16 @@ public class DigitalVideoDisc extends Media
         nbDigitalVideoDisc+=1;
     }
     public DigitalVideoDisc(String title, String category, String director, float cost) {
+        super(director);
         this.title = title;
         this.category = category;
-        this.director = director;
         this.cost = cost;
         nbDigitalVideoDisc+=1;
     }
-    public DigitalVideoDisc(String title, String category, String director, int lenght, float cost) {
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        super(length,director);
         this.title = title;
         this.category = category;
-        this.director = director;
-        this.lenght = lenght;
         this.cost = cost;
         nbDigitalVideoDisc+=1;
     }
@@ -47,12 +43,6 @@ public class DigitalVideoDisc extends Media
     }
     public String getCategory() {
         return category;
-    }
-    public String getDirector() {
-        return director;
-    }
-    public int getLenght() {
-        return lenght;
     }
     public float getCost() {
         return cost;
@@ -65,6 +55,11 @@ public class DigitalVideoDisc extends Media
     }
     public int getId() {
         return id;
+    }
+    public String toStrings()
+    {
+        String text=String.format("DVD - %s \t\t - %-20s - %s \t -%d \t %.2f\n",this.getTitle(),this.getCategory(),this.getDirector(),this.getLength(),this.getCost());
+        return text;
     }
     
 }

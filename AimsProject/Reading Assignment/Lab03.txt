@@ -1,0 +1,26 @@
+4.The return type is string because it contains all the information of the DVD
+17.
+Advantages of Polymorphism:
+
+Code Reusability: Polymorphism allows you to write generic code that can work with different types of objects that share a common base class or interface. This reduces code duplication and makes your code more maintainable.
+Flexibility: Polymorphism enables you to design applications that can adapt to different situations at runtime. You can define behavior based on the actual object type, making code more flexible and extensible.
+Loose Coupling: Polymorphic code relies on interfaces or abstract classes, not specific concrete implementations. This promotes loose coupling, where different parts of your code are less dependent on each other's internal details. This enhances maintainability and testability.
+Clean Interface: Polymorphism helps create cleaner and more intuitive interfaces by using a single method name for related functionalities across derived classes. This improves code readability and reduces the need for multiple methods with slightly different purposes.
+Inheritance and Polymorphism in Java:
+
+Inheritance: Inheritance is a fundamental concept in object-oriented programming that allows you to create new classes (subclasses) that inherit properties and behaviors from existing classes (superclasses). Subclasses can also add their own unique attributes and methods.
+Polymorphism with Inheritance: Polymorphism leverages inheritance to achieve the ability of objects to respond differently to the same method call at runtime. This flexibility arises because a subclass can override a method inherited from its superclass, providing its own implementation.
+ 
+Diffrence:
+Inheritance:
+
+Definition: A mechanism for creating new classes (subclasses) that inherit properties and behaviors from existing classes (superclasses). Subclasses can also add their own unique attributes and methods.
+Focus: Code reusability, defining relationships between classes (parent-child hierarchies).
+Relationship Establishment: Inheritance relationships are established at compile time based on the class hierarchy you define in your code.
+Code Reuse: Achieved by inheriting attributes and methods from a superclass, reducing code duplication.
+Polymorphism:
+
+Definition: The ability of objects to respond differently to the same method call at runtime. This flexibility arises because subclasses can override methods inherited from their superclass, providing their own implementation.
+Focus: Flexibility, adaptability, loose coupling. Methods with the same name but different implementations in subclasses allow for varied behavior at runtime.
+Behavior Determination: Polymorphic behavior is determined at runtime based on the actual object type of the instance being called upon.
+Code Reuse: Achieved by overriding methods in subclasses, allowing for a single method name to handle related functionalities differently based on the object type.
