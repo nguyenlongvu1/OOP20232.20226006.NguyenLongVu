@@ -1,11 +1,11 @@
-package hust.soict.ict.aims;
-import hust.soict.ict.aims.cart.Cart;
-import hust.soict.ict.aims.media.*;
-import java.util.ArrayList;
-public class StoreTest {
+package hust.soict.ict.aims.cart;
+import hust.soict.ict.aims.media.DigitalVideoDisc;
+
+import java.util.Scanner;
+public class CartTest {
     public static void main(String []args)
     {
-        Store anOrder=new Store();
+        Cart anOrder=new Cart();
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f);
         anOrder.addMedia(dvd1);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
@@ -13,6 +13,11 @@ public class StoreTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation","Roger Allers",18.99f);
         anOrder.addMedia(dvd3);
         anOrder.printList();
+        System.out.println("Enter DVD id or title");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        anOrder.searchItembyTitle(userInput);
+        scanner.close();
     }
-    
+        
 }
