@@ -2,11 +2,29 @@ package hust.soict.ict.aims;
 import hust.soict.ict.aims.media.*;
 import java.util.ArrayList;
 public class Store {
-    ArrayList<Media> itemsInStore = new ArrayList<Media>();
+    public ArrayList<Media> itemsInStore = new ArrayList<Media>();
+    public boolean equals(Media newItem)
+    {
+        for(Media m : itemsInStore )
+        {
+            if(m.getTitle().equals(newItem.getTitle()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void addMedia(Media item)
     {
-        itemsInStore.add(item);
-        System.out.println("The items has been added"  );
+        if(equals(item)==false)
+        {
+            itemsInStore.add(item);
+            System.out.println("The items has been added"  );
+        }
+        else
+        {
+            System.out.println("The items has been existed"  );
+        }
     }
     public void removeMedia(Media item)
     {
@@ -44,10 +62,14 @@ public class Store {
         {
             count++;
             if(i==null) break;
-            System.out.print(toString(i,count));
-            
+            String text=i.toStrings();
+            System.out.print(text);
         }
 
         System.out.println("************************************************************************************************ ");
+    }
+    public ArrayList<Media> getItemInStore()
+    {
+        return itemsInStore;
     }
 }

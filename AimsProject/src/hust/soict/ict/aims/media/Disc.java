@@ -25,5 +25,9 @@ public class Disc extends Media{
     }
     public Disc() {
     }
+    public void play()
+    {
+        return;
+    }
     
 }

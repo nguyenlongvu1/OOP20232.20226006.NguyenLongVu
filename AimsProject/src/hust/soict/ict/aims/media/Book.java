@@ -15,6 +15,20 @@ public class Book extends Media
         this.cost = cost;
         this.authors = authors;
     }
+    
+    public Book(String title, String category, float cost, ArrayList<String> authors) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+        this.authors = authors;
+    }
+
+    public Book(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
     public int getId() {
         return id;
     }
@@ -81,5 +95,9 @@ public class Book extends Media
     {
         String text=String.format("Book - %s \t\t - %-20s - %s \t -%d \t %.2f\n",this.getTitle(),this.getCategory(),this.authors,this.getId(),this.getCost());
         return text;
+    }
+
+    public ArrayList<String> getAuthors() {
+        return authors;
     }
 }

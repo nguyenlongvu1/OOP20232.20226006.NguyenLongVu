@@ -1,5 +1,5 @@
 4.The return type is string because it contains all the information of the DVD
-17.
+16.
 Advantages of Polymorphism:
 
 Code Reusability: Polymorphism allows you to write generic code that can work with different types of objects that share a common base class or interface. This reduces code duplication and makes your code more maintainable.
@@ -24,3 +24,10 @@ Definition: The ability of objects to respond differently to the same method cal
 Focus: Flexibility, adaptability, loose coupling. Methods with the same name but different implementations in subclasses allow for varied behavior at runtime.
 Behavior Determination: Polymorphic behavior is determined at runtime based on the actual object type of the instance being called upon.
 Code Reuse: Achieved by overriding methods in subclasses, allowing for a single method name to handle related functionalities differently based on the object type.
+
+17.
+Class should implemented the Comparable interface: Store, Cart
+Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this
+Comparable interface approach? Yes
+Suppose the DVDs have a different ordering rule from the other media types, that is by title, then
+decreasing length, then cost. How would you modify your code to allow this? Write a separate comparison function for DVD

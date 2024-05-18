@@ -1,15 +1,30 @@
 package hust.soict.ict.aims.cart;
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.List;
+import java.util.*;
 import hust.soict.ict.aims.media.*;
 public class Cart
 {
     public static final int MAX_NUMBERS_ORDER = 20;
-    ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    public ArrayList<Media> itemsOrdered = new ArrayList<Media>();
     public void addMedia(Media item)
     {
-        itemsOrdered.add(item);
-        System.out.println("The item has been added");
+        int c=0;
+        for (Media i : itemsOrdered) 
+        {
+            if(item.equals(i)==true) 
+            {
+                System.out.println("The item has been existed");
+                c=1;
+                break;
+            }
+        }
+        if(c==0)
+        {
+            itemsOrdered.add(item);
+            System.out.println("The items has been added"  );
+        }
     }
     public void removeMedia(Media item)
     {
@@ -38,10 +53,8 @@ public class Cart
         float totalCost=0f;
         for(Media i : itemsOrdered)
         {
-
             if(i==null) break;
             totalCost=(totalCost+i.getCost()*10000/10000)*10000/10000;
-            
         }
         return totalCost;
     }
@@ -54,7 +67,8 @@ public class Cart
         {
             count++;
             if(i==null) break;
-            System.out.print(toString(i,count));
+            String text=i.toStrings();
+            System.out.print(text);
             
         }
         System.out.printf("Total cost: %.2f\n",totalCost());
@@ -95,6 +109,24 @@ public class Cart
                 count++;
                 System.out.print(toString(i,count));
             }         
+        }
+    }
+    public void sortMediaByTitle() {
+        Collections.sort((List<Media>)itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        Iterator<Media> iterator = itemsOrdered.iterator();
+        iterator = itemsOrdered.iterator();
+    
+        while (iterator.hasNext()) {
+            System.out.println(((Media)iterator.next()).toStrings());
+        }
+    }
+    public void sortMediaByCost() {
+        Collections.sort((List<Media>)itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        Iterator<Media> iterator = itemsOrdered.iterator();
+        iterator = itemsOrdered.iterator();
+    
+        while (iterator.hasNext()) {
+            System.out.println(((Media)iterator.next()).toStrings());
         }
     }
 }
