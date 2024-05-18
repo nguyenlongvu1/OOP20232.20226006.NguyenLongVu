@@ -252,7 +252,9 @@ public class Aims
                         }
                 }while(choice1!=0);
                 break;
+
                 case 2: removeMediaFromTheStore(anItem); break;
+                
                 default:
                     break;
             }

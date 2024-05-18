@@ -66,6 +66,7 @@ public class CompactDisc extends Disc implements Playable
         }
         return true;
     }
+
     public void addTrack(Track track)
     {
         int exist=0;

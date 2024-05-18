@@ -1,6 +1,7 @@
 package hust.soict.ict.aims;
 import hust.soict.ict.aims.media.*;
 import java.util.ArrayList;
+import hust.soict.ict.aims.media.Book;
 public class Store {
     public ArrayList<Media> itemsInStore = new ArrayList<Media>();
     public boolean equals(Media newItem)

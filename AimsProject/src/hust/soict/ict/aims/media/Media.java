@@ -60,7 +60,7 @@ public  class Media implements Comparable<Media>{
         }
         return "Playing media";
     }
-    
+
     public static void main (String[] args)
     {
 

@@ -98,5 +98,6 @@ public class DigitalVideoDisc extends Disc implements Playable
         String text=String.format("Playing DVD: %s\nDVD length: %s",this.getTitle(),this.getLength());
         return text;
     }
+
     
 }
