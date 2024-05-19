@@ -326,26 +326,26 @@ public class Aims
                         if(c==1)
                         {
                             mediaDetailsMenu();
-                        }
-                        do
-                        {
-                            Scanner s = new Scanner(System.in);
-                            choice3=sc.nextInt();
-                            switch(choice3)
+                            do
                             {
-                                case 0: break;
-                                case 1:
-                                addtoCart(cart,anItem,itemSelection);
-                                break;
-                                case 2:
-                                playMedia(anItem,itemSelection);
-                                break;
-                                default: 
-                                System.out.println("Try again");
-                                break;
+                                Scanner s = new Scanner(System.in);
+                                choice3=sc.nextInt();
+                                switch(choice3)
+                                {
+                                    case 0: break;
+                                    case 1:
+                                    addtoCart(cart,anItem,itemSelection);
+                                    break;
+                                    case 2:
+                                    playMedia(anItem,itemSelection);
+                                    break;
+                                    default: 
+                                    System.out.println("Try again");
+                                    break;
 
-                            }
-                        } while(choice3!=0);
+                                }
+                            } while(choice3!=0);
+                        }
                         break;
 
                         case 2:
@@ -381,13 +381,31 @@ public class Aims
                                     default:
                                         break;
                                 }
-                                case 2: break;
+                                break;
+                                case 2: 
+                                    System.out.println("Sort medias in cart by (1) title or (2) cost:");
+                                    int sortOption = sc.nextInt();
+                                    sc.nextLine();
+                                    if (sortOption == 1) 
+                                    {
+                                        cart.sortMediaByTitle();
+                                    } 
+                                    else if (sortOption == 2) 
+                                    {
+                                        cart.sortMediaByCost();
+                                    } 
+                                    else 
+                                    {
+                                        System.out.println("Invalid option.");
+                                    }
+                                    break;
                                 case 3:
                                     removeMediaFromCart(cart);
                                     break;
                                 case 4:
-                                    itemSelection=sc.nextLine();
+                                    itemSelection=sc1.nextLine();
                                     playMediaInCart(cart, itemSelection);
+                                    break;
                                 case 5:
                                     System.out.println("an order is created");
                                     cart.itemsOrdered.clear();
@@ -429,28 +447,29 @@ public class Aims
                             default:
                                 break;
                         }
+                        break;
                         case 2:
-                            System.out.println("Sort medias in cart by (1) title or (2) cost:");
-                            int sortOption = sc.nextInt();
-                            sc.nextLine();
-                            if (sortOption == 1) 
-                            {
-                                cart.sortMediaByTitle();
-                            } 
-                            else if (sortOption == 2) 
-                            {
-                                cart.sortMediaByCost();
-                            } 
-                            else 
-                            {
-                                System.out.println("Invalid option.");
-                            }
-                            break;
+                        System.out.println("Sort medias in cart by (1) title or (2) cost:");
+                        int sortOption = sc.nextInt();
+                        sc.nextLine();
+                        if (sortOption == 1) 
+                        {
+                            cart.sortMediaByTitle();
+                        } 
+                        else if (sortOption == 2) 
+                        {
+                            cart.sortMediaByCost();
+                        } 
+                        else 
+                        {
+                            System.out.println("Invalid option.");
+                        }
+                        break;
                         case 3:
                             removeMediaFromCart(cart);
                             break;
                         case 4:
-                            itemSelection=sc.nextLine();
+                            itemSelection=sc1.nextLine();
                             playMediaInCart(cart, itemSelection);
                             break;
                         case 5:
