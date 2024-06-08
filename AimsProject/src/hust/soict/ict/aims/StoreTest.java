@@ -1,4 +1,5 @@
 package hust.soict.ict.aims;
+import hust.soict.ict.aims.Store.Store;
 import hust.soict.ict.aims.cart.Cart;
 import hust.soict.ict.aims.media.*;
 import java.util.ArrayList;

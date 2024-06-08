@@ -4,7 +4,6 @@ import hust.soict.ict.aims.exception.PlayerException;
 import hust.soict.ict.aims.media.*;
 
 import javax.swing.*;
-import javax.naming.LimitExceededException;
 import java.awt.*;
 import java.awt.event.*;
 public class MediaStore extends JPanel {
